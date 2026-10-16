@@ -68,10 +68,15 @@ Use `## Definition`, `## Evidence`, `## Used by`, and `## Disagreements`. Keep t
 
 A topic is a question that many papers study, not a summary of one paper. One source may feed several topics, and one topic accumulates many sources. The headings are the questions on which those papers are compared. Set them when the topic is opened, and keep them stable. File each new source under every heading. Keep prior results when a later paper disagrees, and link both sources.
 
-Two opened topics:
+Opened topics:
 
 - **Credit cycle.** `## Methodology`, `## Results`, `## Problems and mitigations`. The page must contain the sentence "Fragility after good times."
 - **Financial friction.** `## How it is modelled`, `## Interaction with the real economy`, `## Phenomena and puzzles explained`. Defaultable debt, collateral constraints, and other formalizations are entries here, not separate concepts.
+- **Information friction.** `## How it is modelled`, `## Interaction with the real economy`, `## Phenomena and puzzles explained`. Exogenous signals, sticky information, fixed information capacity, and elastic rational inattention are entries here, not separate concepts.
+- **Network formation.** `## How the network is formed`, `## Consequences relative to a given network`, `## Problems and mitigations`. Papers that take the production network as given do not belong here. On the production-network concept, file every network source as given or chosen. A paper that treats input–output shares as parameters of technology is given. A paper in which firms choose their supplier sets is chosen, and it also feeds this topic.
+- **Growth.** `## How growth is modelled`, `## Results`, `## Problems and mitigations`.
+- **Optimal monetary policy.** `## Tradeoffs faced by policymakers`, `## Policy target`, `## Problems and mitigations`.
+- **Network propagation.** `## Propagation mechanism`, `## Effect of propagation`, `## Problems and mitigations`.
 
 ### Analysis
 
