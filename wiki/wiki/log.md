@@ -9,3 +9,8 @@
 - filed analyses/2026-09-21-fed-vs-ecb-neutral-rate.md
 - consulted topics/us-monetary-policy-stance.md, concepts/neutral-rate.md
 - gap: no ECB source
+
+## [2026-10-16] ingest | Bordalo et al., Real Credit Cycles
+- created sources/2026-10-16-bordalo-et-al-real-credit-cycle.md
+- created concepts/diagnostic-expectation.md, concepts/credit-spread.md, topics/credit-cycle.md, topics/financial-friction.md
+- contradictions: none

@@ -66,7 +66,12 @@ Use `## Definition`, `## Evidence`, `## Used by`, and `## Disagreements`. Keep t
 
 ### Topic
 
-Use `## Thesis`, `## Supporting evidence`, `## Contradicting evidence`, `## Open questions`, and `## Related analyses`. Revise the thesis when evidence warrants it and preserve contrary evidence.
+A topic is a question that many papers study, not a summary of one paper. One source may feed several topics, and one topic accumulates many sources. The headings are the questions on which those papers are compared. Set them when the topic is opened, and keep them stable. File each new source under every heading. Keep prior results when a later paper disagrees, and link both sources.
+
+Two opened topics:
+
+- **Credit cycle.** `## Methodology`, `## Results`, `## Problems and mitigations`. The page must contain the sentence "Fragility after good times."
+- **Financial friction.** `## How it is modelled`, `## Interaction with the real economy`, `## Phenomena and puzzles explained`. Defaultable debt, collateral constraints, and other formalizations are entries here, not separate concepts.
 
 ### Analysis
 
