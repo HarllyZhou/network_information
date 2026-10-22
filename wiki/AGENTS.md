@@ -72,11 +72,13 @@ Opened topics:
 
 - **Credit cycle.** `## Methodology`, `## Results`, `## Problems and mitigations`. The page must contain the sentence "Fragility after good times."
 - **Financial friction.** `## How it is modelled`, `## Interaction with the real economy`, `## Phenomena and puzzles explained`. Defaultable debt, collateral constraints, and other formalizations are entries here, not separate concepts.
-- **Information friction.** `## How it is modelled`, `## Interaction with the real economy`, `## Phenomena and puzzles explained`. Exogenous signals, sticky information, fixed information capacity, elastic rational inattention, and a switch between a decreasing gain and a constant gain are entries here, not separate concepts.
+- **Information friction.** `## How it is modelled`, `## Interaction with the real economy`, `## Phenomena and puzzles explained`. Exogenous signals, sticky information, fixed information capacity, elastic rational inattention, a switch between a decreasing gain and a constant gain, and a narrative prior combined with a private signal are entries here, not separate concepts.
 - **Network formation.** `## How the network is formed`, `## Consequences relative to a given network`, `## Problems and mitigations`. Papers that take the production network as given do not belong here. On the production-network concept, file every network source as given or chosen. A paper that treats input–output shares as parameters of technology is given. A paper in which firms choose their supplier sets is chosen, and it also feeds this topic.
 - **Growth.** `## How growth is modelled`, `## Results`, `## Problems and mitigations`.
 - **Optimal monetary policy.** `## Tradeoffs faced by policymakers`, `## Policy target`, `## Problems and mitigations`.
 - **Network propagation.** `## Propagation mechanism`, `## Effect of propagation`, `## Problems and mitigations`.
+- **Contagion of beliefs.** `## How beliefs spread`, `## Effect on the economy`, `## Problems and mitigations`. Contagion, association, and stubbornness are entries here, not separate concepts.
+- **Natural language processing.** `## How the text is measured`, `## What the measurement identifies`, `## Problems and mitigations`. Dictionary sentiment, tf-idf narrative scoring, and latent Dirichlet allocation are entries here, not separate concepts.
 
 ### Analysis
 

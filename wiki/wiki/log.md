@@ -44,3 +44,8 @@
 - created sources/2023-01-01-carvalho-eusepi-moench-preston-anchored-inflation-expectations.md, concepts/inflation-expectation-anchoring.md
 - updated topics/information-friction.md, concepts/monetary-policy.md, topics/optimal-monetary-policy.md
 - contradictions: none
+
+## [2026-10-22] ingest | Flynn and Sastry, The Macroeconomics of Narratives
+- created sources/2024-06-01-flynn-sastry-macroeconomics-of-narratives.md, concepts/narrative.md, topics/contagion-of-beliefs.md, topics/natural-language-processing.md
+- updated topics/information-friction.md
+- contradictions: none
