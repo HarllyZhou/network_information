@@ -1,23 +1,24 @@
 ---
 type: concept
 title: "Monetary policy"
-summary: "The monetary authority's nominal instrument. Papers write it as a policy rate or as a rule for nominal demand."
+summary: "The monetary authority's nominal instrument. Papers write it as a policy rate, nominal demand, a wage rule, or an inflation and output-gap target."
 created: 2026-10-16
-updated: 2026-10-16
+updated: 2026-10-20
 tags: [monetary-policy]
-sources: [wiki/sources/2022-05-01-lao-tahbaz-salehi-optimal-monetary-policy-production-networks.md, wiki/sources/2025-06-16-fang-huo-li-wu-inattentive-network.md, wiki/sources/2026-09-20-powell-jackson-hole.md]
+sources: [wiki/sources/2022-05-01-lao-tahbaz-salehi-optimal-monetary-policy-production-networks.md, wiki/sources/2023-01-01-carvalho-eusepi-moench-preston-anchored-inflation-expectations.md, wiki/sources/2025-06-16-fang-huo-li-wu-inattentive-network.md, wiki/sources/2026-09-20-powell-jackson-hole.md]
 ---
 
 # Monetary policy
 
 ## Definition
 
-Monetary policy is the monetary authority's nominal instrument. One formalization is a setting for the policy rate. Another is a rule for nominal aggregate demand.
+Monetary policy is the monetary authority's nominal instrument. Papers write it as a policy rate, a rule for nominal aggregate demand, a wage rule, or a target criterion for inflation and the output gap.
 
 ## Evidence
 
 - La'O and Tahbaz-Salehi. The authority sets nominal aggregate demand \(m\) in the cash-in-advance constraint \(PC = m\), and \(m\) may depend on productivities and on the profile of beliefs. The optimal rule fully stabilizes a price index, \(\sum_i \psi_i^\ast \log p_i = 0\). Industry taxes are a separate instrument and cannot depend on the state. Source: [Optimal Monetary Policy in Production Networks](../sources/2022-05-01-lao-tahbaz-salehi-optimal-monetary-policy-production-networks.md).
 - Fang, Huo, Li, and Wu. The authority chooses a wage rule \(w_t = \kappa z_t\), implemented as \(\sum_i \varphi_i p_{it} = 0\). The weight adds an expectation-management term to the index that holds price flexibility fixed. Source: [Inattentive Network](../sources/2025-06-16-fang-huo-li-wu-inattentive-network.md).
+- Carvalho, Eusepi, Moench, and Preston. The authority follows \(\pi_t - \gamma\pi_{t-1} + \lambda_x x_t = \phi_t\). The rule is optimal under discretion when the inflation target is zero, and the output gap is the instrument. The weight \(\lambda_x\) governs how strongly a drift in long-run inflation expectations feeds back into inflation. Source: [Anchored Inflation Expectations](../sources/2023-01-01-carvalho-eusepi-moench-preston-anchored-inflation-expectations.md).
 - Powell, at Jackson Hole on 2026-09-20, describes the instrument as the policy rate and places it close to most estimates of the neutral rate. Source: [Powell, Jackson Hole remarks](../sources/2026-09-20-powell-jackson-hole.md).
 
 ## Used by
@@ -27,4 +28,4 @@ Monetary policy is the monetary authority's nominal instrument. One formalizatio
 
 ## Disagreements
 
-None recorded. The two sources describe different objects: an optimal price index in a multisector model, and the Federal Reserve's stated position of the funds rate.
+None recorded. The sources write different instruments: a sectoral price index, a wage rule, an inflation and output-gap target criterion, and the Federal Reserve's funds rate.

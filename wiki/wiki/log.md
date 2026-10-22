@@ -39,3 +39,8 @@
 - created sources/2025-06-16-fang-huo-li-wu-inattentive-network.md, topics/information-friction.md
 - updated concepts/production-network.md, concepts/monetary-policy.md, topics/optimal-monetary-policy.md, topics/network-propagation.md
 - contradictions: none
+
+## [2026-10-20] ingest | Carvalho, Eusepi, Moench, and Preston, Anchored Inflation Expectations
+- created sources/2023-01-01-carvalho-eusepi-moench-preston-anchored-inflation-expectations.md, concepts/inflation-expectation-anchoring.md
+- updated topics/information-friction.md, concepts/monetary-policy.md, topics/optimal-monetary-policy.md
+- contradictions: none
