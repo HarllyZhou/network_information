@@ -26,9 +26,14 @@ With conditional normal distribution of $X_{t+1}|X_t$, we can have the following
 $$ \mathbb{E}^\theta_t X_{t+1} = \mathbb{E}_t X_{t+1} + \theta (\mathbb{E}_t X_{t+1} - \mathbb{E}_{t-J} X_{t+1}). $$
 We will assume that only current news matters thoughout, that is, $J=1$.
 
+- How to empirically test diagnosticity?
+$$
+X_{t+1}-\mathbb{E}^{\theta}_tX_{t+1} = \underbrace{X_{t+1} - \mathbb{E}_t X_{t+1}}_{\equiv\ e_{t+1}} - \theta(\mathbb{E}_t X_{t+1} - \mathbb{E}_{t-1} X_{t+1})
+$$
+
 ## Model Assumptions
 
-This is a TANK model in a closed economy with $N$ sectors interconnected with input-output (IO) linkages. Here, the TA in TANK refers to two types of firms instead of households. The model lays its foundation on La'O and Tahbaz-Salehi (2022, Econometrica)。 L'Huiller and Singh (2024, REStud) provides solution methods for DENK models.
+This is a TANK model in a closed economy with $N$ sectors interconnected with input-output (IO) linkages. Here, the TA in TANK refers to two types of firms instead of households. The model lays its foundation on La'O and Tahbaz-Salehi (2022, Econometrica). L'Huiller and Singh (2024, REStud) provides solution methods for DENK models.
 
 ### Production Firms
 Each sector $i$ has a unit mass of production firms $k \in [0,1]$. Assume that there are two types of firms in each sector: rational firms with $\theta = 0$ and diagnostic firms with diagnosticity $\theta_i > 0$. For the benchmark, we assume that $\theta_i = \theta$ for all $i$'s. Denote $\delta_{i,t} \in [0,1]$ as the proportion of diagnostic firms in sector $i$ at time $t$. 
