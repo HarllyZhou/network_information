@@ -12,7 +12,7 @@ On the other hand, DE itself is not enough to explain the persistence of unancho
 
 This project has four goals. 
 - Empirically, we try to use firm-level data to examine whether diagnosticity applies to firms' expectations. 
-- Theoretically, we try to build a TANK model with DE and in the spirit of infectious disease models to understand how belief distortions are contagious and to characterize conditions where anchoring is possible. 
+- Theoretically, we try to build a TANK model with DE and in the spirit of epidemiology models to understand how belief distortions are contagious and to characterize conditions where anchoring is possible. 
 - Quantitatively, we try to calibrate a quantitative model and show how long it may take for inflation expectations to anchor with different levels of aggregate diagnosticity and how sectoral diagnosticity combined with its network position generates persistent anchoring. 
 - As an application, we try to make policy implications on how to anchor the inflation expectations.
 
@@ -30,7 +30,7 @@ $$ \mathbb{E}^\theta_t X_{t+1} = \mathbb{E}_t X_{t+1} + \theta (\mathbb{E}_t X_{
 This is a TANK model in a closed economy with $N$ sectors interconnected with input-output (IO) linkages. Here, the TA in TANK refers to two types of firms instead of households. The model lays its foundation on La'O and Tahbaz-Salehi (2022, Econometrica)。 L'Huiller and Singh (2024, REStud) provides solution methods for DENK models.
 
 ### Production Firms
-Each sector $i$ has a unit mass of production firms $k \in [0,1]$. Assume that there are two types of firms in each sector: rational firms with $\theta = 0$ and diagnostic firms with diagnosticity $\theta_i > 0$. For the benchmark, we assume that $\theta_i = \theta$ for all $i$'s. Denote $\delta_i \in [0,1]$ as the proportion of diagnostic firms in sector $i$. 
+Each sector $i$ has a unit mass of production firms $k \in [0,1]$. Assume that there are two types of firms in each sector: rational firms with $\theta = 0$ and diagnostic firms with diagnosticity $\theta_i > 0$. For the benchmark, we assume that $\theta_i = \theta$ for all $i$'s. Denote $\delta_{i,t} \in [0,1]$ as the proportion of diagnostic firms in sector $i$ at time $t$. 
 
 Assume Calvo-type price stickiness such that there is a probability $\omega \in (0,1)$ that a firm cannot change its price. 
 
@@ -66,3 +66,29 @@ $$
 P_t C_t = M_t,
 $$
 where $M_T$ that can be interpreted as either monet supply or nominal aggregate demand is set directly by the monetary authority.
+
+### Contagion and Recovery
+In epidemiology models, the population is divided into 3 groups, the susceptible group ($S$), the infectious group ($I$), and the recovered group ($R$). To capture the dynamics, there are two important parameters, the transmission rate, $\kappa$, measuring how often an infectious person transmits the disease to a susceptible person, and the recovery rate, $\phi$, measuring the proportion of infectious people who recover per unit of time. 
+
+The dynamics of the number of people in each group is described by the following system
+$$
+\begin{align*}
+\frac{dS}{dt} &= -\kappa S\frac{I}{S+I+R},\\
+\frac{dI}{dt} &= \kappa S \frac{I}{S+I+R} - \phi I,\\
+\frac{dR}{dt} &= \phi I.
+\end{align*}
+$$
+Here $\frac{I}{S+I+R}$ measures that probability of a person interacting with an infectious person. 
+
+In our model, we can think of diagnostic expectation as the "virus". Firms can change their beliefs via two effects. According to Flynn and Sastry (2024, working paper), firms change their beliefs due to two reasons, the prevelance of a belief and the ability to match the information. This insight provides us with two channels, the *contagion* effect which makes rational firms go diagnostic, and the *recovery* effect which makes diagnostic firms return rational. 
+
+Denote the rational group in sector $i$ as $S_{i,t}$ and the diagnostic group as $D_{i,t}$. The contagion effect works directly through the network. In continuous time, we have
+$$
+\begin{align*}
+\frac{dS_{i,t}}{dt} &= - \kappa S_{i,t} \sum_{j=1}^N \alpha_{i,j} \delta_{j,t} + \phi \underbrace{(?)}_{\text{requires micro-foundation for the recovery}}\\
+\frac{dD_{i,t}}{dt} &= \kappa S_{i,t} \sum_{j=1}^N \alpha_{i,j} \delta_{j,t} - \phi \underbrace{(?)}_{\text{requires micro-foundation for the recovery}}
+\end{align*}
+$$
+where $\alpha_{i,j}$ is the expenditure share of a sector $i$ firms spending on input $j$. 
+
+Such dynamics will affect the aggregators' pricing, that is, the price of the aggregated sector good, and then the aggregate price index and inflation.
