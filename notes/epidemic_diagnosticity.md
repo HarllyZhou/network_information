@@ -24,6 +24,7 @@ where $f$ is the true conditional distribution and $\theta \geq 0$ is the *diagn
 
 With conditional normal distribution of $X_{t+1}|X_t$, we can have the following formula:
 $$ \mathbb{E}^\theta_t X_{t+1} = \mathbb{E}_t X_{t+1} + \theta (\mathbb{E}_t X_{t+1} - \mathbb{E}_{t-J} X_{t+1}). $$
+We will assume that only current news matters thoughout, that is, $J=1$.
 
 ## Model Assumptions
 
@@ -35,13 +36,30 @@ Each sector $i$ has a unit mass of production firms $k \in [0,1]$. Assume that t
 Assume Calvo-type price stickiness such that there is a probability $\omega \in (0,1)$ that a firm cannot change its price. 
 
 Firms are producing differentiated goods using a CES aggregator of intermediate inputs from sector $j$, $x_{ik,j}$ with a decreasing return to scale (DRTS) production technology
-$$ y_{ik, t} = \zeta_i \left(\sum_{j=1}^N \alpha_{i,j} x_{ik, j, t}^{\frac{\xi_i}{\xi_i-1}}\right)^{\psi \frac{\xi_i-1}{\xi_i}}, $$
-where $\alpha_{i,j} \in (0,1)$'s are the share parameters, $\xi_i$ captures substitutability, $\psi \in (0,1)$ captures the DRTS, and $\zeta_i$ is a normalizing factor to be defined when deriving the marginal cost.
+$$ y_{ik, t} = \left(\sum_{j=1}^N \alpha_{i,j} x_{ik, j, t}^{\frac{\xi_i}{\xi_i-1}}\right)^{\psi \frac{\xi_i-1}{\xi_i}}, $$
+where $\alpha_{i,j} \in (0,1)$'s are the share parameters, $\xi_i$ captures substitutability, $\psi \in (0,1)$ captures the DRTS.
 
-Firms choose the price by maximizing the profit:
+The cost minimization problem is
 $$
-\max_{p_{ik,t}}\quad \mathbb{E}^{\theta_k}_t \sum_{s=0}^{+\infty} (\Lambda_{0,s} \omega)^s \left(p_{ik,t} y_{ik, t+s} - \sum_{j=1}^N p_{j,t+s} x_{ik,j,t+s}\right), $$
-where $\theta_k  = \theta$ if firm $k$ is diagnostic and $0$ otherwise. 
+\min_{\{x_{ik,j,t}\}_{j=1}^N} \quad \sum_{j=1}^N p_{j,t} x_{ik,j,t}
+$$
+subject to the production function. Then the FOC is
+$$
+[x_{ik,j,t}]:\ p_{j,t} - \mu_{i,t}\alpha_{i,j} x_{ik,j,t}^{\frac{1}{\xi_i-1}}\psi\left(\sum_{\ell=1}^N \alpha_{i,\ell} x_{ik, \ell, t}^{\frac{\xi_i}{\xi_i-1}}\right)^{\psi \frac{\xi_i-1}{\xi_i}-1} = 0,
+$$
+which yields the following total and marginal cost expression:
+$$
+\begin{align*}
+tc_{ik,t} &= \left(\sum_{j=1}^N \alpha_{i,j}^{1-\xi_i} p_{j, t}^{\xi}\right)^{\frac{1}{\xi_i}} y_{ik,t}^{\frac{1}{\psi}}\\
+mc_{ik,t} &= \frac{1}{\psi}\left(\sum_{j=1}^N \alpha_{i,j}^{1-\xi_i} p_{j, t}^{\xi}\right)^{\frac{1}{\xi_i}} y_{ik,t}^{\frac{1}{\psi}-1}.
+\end{align*}
+$$
+
+Firms choose the optimal price by maximizing the profit:
+$$
+\max_{p_{ik,t}}\ \mathbb{E}^{\theta_k}_t \sum_{s=0}^{+\infty} \Lambda_{0,s} \omega^s \left(p_{ik,t} y_{ik, t+s} - \left(\sum_{j=1}^N \alpha_{i,j}^{1-\xi_i} p_{j, t+s}^{\xi}\right)^{\frac{1}{\xi_i}} y_{ik,t+s}^{\frac{1}{\psi}}\\
+\right), $$
+where $\theta_k  = \theta$ if firm $k$ is diagnostic and $0$ otherwise and $\Lambda_{0,s}$ is the stochastic discount factor which firms take as given. 
 
 ### Aggregation Firms
 Competitive aggregators aggregate the differentiated goods produced by production firms under a CES production technology:
@@ -50,7 +68,7 @@ y_{i,t} = \left(\int^1_0 y_{ik,t}^{\frac{\chi_i - 1}{\chi_i}} dk\right)^{\frac{\
 $$
 Their competitiveness implies that the sector $i$ good is priced at such that the aggregators earn zero profit:
 $$
-V^A_{i,t} = p_{i,t} y_{i,t} - \int^1_0 p_{ik,t} y_{ik,t} dk = 0.
+V_{i,t} = p_{i,t} y_{i,t} - \int^1_0 p_{ik,t} y_{ik,t} dk = 0.
 $$
 
 ### Household
@@ -68,26 +86,30 @@ $$
 where $M_T$ that can be interpreted as either monet supply or nominal aggregate demand is set directly by the monetary authority.
 
 ### Contagion and Recovery
-In epidemiology models, the population is divided into 3 groups, the susceptible group ($S$), the infectious group ($I$), and the recovered group ($R$). To capture the dynamics, there are two important parameters, the transmission rate, $\kappa$, measuring how often an infectious person transmits the disease to a susceptible person, and the recovery rate, $\phi$, measuring the proportion of infectious people who recover per unit of time. 
+In one of the epidemiology models called the SIS model, the population is divided into 2 groups, the susceptible group ($S$) and the infectious group ($I$). The susceptible group may be infected with the disease after interact with people in the infectious group with some probability. Infected people have some probability to recover and return to the susceptible group whereas still subject to the risk of being infected again. To capture the dynamics, there are two important parameters, the transmission rate, $\kappa$, measuring how often an infectious person transmits the disease to a susceptible person, and the recovery rate, $\iota$, measuring the proportion of infectious people who recover per unit of time. 
 
 The dynamics of the number of people in each group is described by the following system
 $$
 \begin{align*}
-\frac{dS}{dt} &= -\kappa S\frac{I}{S+I+R},\\
-\frac{dI}{dt} &= \kappa S \frac{I}{S+I+R} - \phi I,\\
-\frac{dR}{dt} &= \phi I.
+S_{t+1} - S_{t} &= -\kappa S_t\frac{I_t}{S_t+I_t} + \iota I_t,\\
+I_{t+1} - I_{t} &= \kappa S_t\frac{I_t}{S_t+I_t} - \iota I_t,
 \end{align*}
 $$
-Here $\frac{I}{S+I+R}$ measures that probability of a person interacting with an infectious person. 
+Here $\frac{I_t}{S_t+I_t}$ measures that probability of a person interacting with an infectious person. 
 
-In our model, we can think of diagnostic expectation as the "virus". Firms can change their beliefs via two effects. According to Flynn and Sastry (2024, working paper), firms change their beliefs due to two reasons, the prevelance of a belief and the ability to match the information. This insight provides us with two channels, the *contagion* effect which makes rational firms go diagnostic, and the *recovery* effect which makes diagnostic firms return rational. 
-
-Denote the rational group in sector $i$ as $S_{i,t}$ and the diagnostic group as $D_{i,t}$. The contagion effect works directly through the network. In continuous time, we have
+In our model, we can think of diagnostic expectation as the "virus". Firms can change their beliefs via two effects. According to Flynn and Sastry (2024, working paper), firms change their beliefs due to two reasons, the prevelance of a belief and the ability to match the information. This insight provides us with two channels, the *contagion* effect which makes rational firms go diagnostic due to emotional reasons, and the *recovery* effect which makes diagnostic firms return rational due to various reasons, like the deviation from realized variable and aggregate shocks. We abstract a bit from the micro-foundation of the recovery rate by assuming a stochastic recovery rate 
 $$
-\begin{align*}
-\frac{dS_{i,t}}{dt} &= - \kappa S_{i,t} \sum_{j=1}^N \alpha_{i,j} \delta_{j,t} + \phi \underbrace{(?)}_{\text{requires micro-foundation for the recovery}}\\
-\frac{dD_{i,t}}{dt} &= \kappa S_{i,t} \sum_{j=1}^N \alpha_{i,j} \delta_{j,t} - \phi \underbrace{(?)}_{\text{requires micro-foundation for the recovery}}
-\end{align*}
+\iota_t:= \frac{1}{1+e^{-u_t}},
+$$ 
+where $u_t$ follows that following $AR(1)$ process:
+$$
+u_t = (1-\rho_u)\bar{u} + \rho_u u_{t-1} + \sigma_u \epsilon_t,\quad
+|\rho_u|\leq 1,\quad
+\varepsilon_t\sim\mathcal N(0,1).
+$$
+Along with the SIS model in the epidemiology literature, we can model the dynamic of diagnostic proportion of sector $i$ as follows:
+$$
+\delta_{i,t+1} - \delta_{i,t} = \kappa (1-\delta_{i,t}) \sum_{j=1}^N \alpha_{i,j} \delta_{j,t} - \iota_t \delta_{i,t}
 $$
 where $\alpha_{i,j}$ is the expenditure share of a sector $i$ firms spending on input $j$. 
 
